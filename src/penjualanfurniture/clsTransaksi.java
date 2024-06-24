@@ -2,7 +2,7 @@
 package penjualanfurniture;
 
 import javax.swing.JOptionPane;
-
+import java.sql.*;
 /**
  *
  * @author M-SI
@@ -30,7 +30,7 @@ public class clsTransaksi extends clskoneksi{
     
     public void edit(){
         try{
-            sql="update transaksi set tanggal = '"+tanggal+"',nama_furniture='"+nama_furniture+"',jumlah='"+jumlah+"',total_harga='"+total+"'";
+            sql="update transaksi set tanggal = '"+tanggal+"',nama_furniture='"+nama_furniture+"',jumlah='"+jumlah+"',harga='"+harga+"',total_harga='"+total+"' where id_transaksi = '"+no_transaksi+"'";
            
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"terjadi Kesalahan / Koneksi eror");
@@ -40,7 +40,7 @@ public class clsTransaksi extends clskoneksi{
     
     public void hapus(){
         try{
-            sql ="delete from transaksi where id_transaksi= '"+no_transaksi+"',";
+            sql ="delete from transaksi where id_transaksi= '"+no_transaksi+"'";
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Terjadi Kesalahan");
             System.out.println(e.getMessage());

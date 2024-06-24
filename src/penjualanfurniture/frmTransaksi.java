@@ -48,7 +48,7 @@ public class frmTransaksi extends javax.swing.JFrame {
             Statement stat1 = transaksi.conn.createStatement();
             ResultSet res1 = stat1.executeQuery(transaksi.sql);
             while(res1.next()){
-                tabelmapel.addRow(new Object[]{res1.getString(1), res1.getString(2),res1.getString(3),res1.getString(4),res1.getString(5)});
+                tabelmapel.addRow(new Object[]{res1.getString(1), res1.getString(2),res1.getString(3),res1.getString(4),res1.getString(5),res1.getString(6)});
                 
                 
             }tblTransaksi.setModel(tabelmapel);
@@ -316,7 +316,7 @@ public class frmTransaksi extends javax.swing.JFrame {
             try{
                 transaksi.AksesData();
                 transaksi.no_transaksi = txtNotransaksi.getText();
-                SimpleDateFormat date_format = new SimpleDateFormat("yy-MM-dd");
+                SimpleDateFormat date_format = new SimpleDateFormat("yyyy-MM-dd");
                 transaksi.tanggal = date_format.format(Tgl.getDate());
                 transaksi.nama_furniture = txtnamafurni.getText();
                  String njumlah = txtJumlah.getText();
@@ -381,7 +381,7 @@ public class frmTransaksi extends javax.swing.JFrame {
 
     private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
         // TODO add your handling code here:
-        if(txtNotransaksi.getText().equals("") || txt){
+        if(txtNotransaksi.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Pilih No Transaksi Yang mau di Edit");
         }else{
             try{
@@ -397,7 +397,7 @@ public class frmTransaksi extends javax.swing.JFrame {
                 String nharga_furniture = txthargafurni.getText();
                 transaksi.harga = Integer.parseInt(nharga_furniture);
                  String mharga = txttotalbayar.getText();
-                transaksi.edit();
+               
                 transaksi.total = Integer.parseInt(mharga);
                 transaksi.simpan();
                 transaksi.res.execute(transaksi.sql);
