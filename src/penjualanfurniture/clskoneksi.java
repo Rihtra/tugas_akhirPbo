@@ -27,5 +27,8 @@ public class clskoneksi {
             System.out.println(e.getMessage());
             }
     }
+    public Connection getConnection() {
+        return conn;
+    }
     
 }
