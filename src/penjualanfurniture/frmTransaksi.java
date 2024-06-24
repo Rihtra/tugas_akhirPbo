@@ -6,6 +6,7 @@ package penjualanfurniture;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import javax.swing.JFrame;
@@ -27,6 +28,7 @@ public class frmTransaksi extends javax.swing.JFrame {
         initComponents();
         transaksi.AksesData();
         IsiTable();
+        addListeners();
     }
 
    public void IsiTable(){
@@ -62,6 +64,30 @@ public class frmTransaksi extends javax.swing.JFrame {
         txtJumlah.setText("");
         txttotalbayar.setText("");
         txtNotransaksi.requestFocus();
+    }
+    private void addListeners() {
+        txtJumlah.addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent evt) {
+                calculateTotal();
+            }
+        });
+        txthargafurni.addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent evt) {
+                calculateTotal();
+            }
+        });
+    }
+
+    private void calculateTotal() {
+        try {
+            int jumlah = Integer.parseInt(txtJumlah.getText());
+            int harga = Integer.parseInt(txthargafurni.getText());
+            int total = jumlah * harga;
+            txttotalbayar.setText(String.valueOf(total));
+        } catch (NumberFormatException e) {
+            // Handle exception if input is not a valid number
+            txttotalbayar.setText("");
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -103,7 +129,7 @@ public class frmTransaksi extends javax.swing.JFrame {
 
         namafurni.setText("Nama Furniture :");
 
-        hrgfurni.setText("Harga_Furniture :");
+        hrgfurni.setText("Harga Furniture :");
 
         tbfurni.setText(" Total Bayar     :");
 
@@ -156,13 +182,13 @@ public class frmTransaksi extends javax.swing.JFrame {
 
         tblTransaksi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "No Transaksi", "Tanggal", "Nama Furnitur", "Jumlah beli", "Harga Furniture"
+                "No Transaksi", "Tanggal", "Nama Furnitur", "Jumlah beli", "Harga Furniture", "Total Bayar"
             }
         ));
         tblTransaksi.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -172,7 +198,7 @@ public class frmTransaksi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblTransaksi);
 
-        jumlah.setText("Jumlah  Beli             :");
+        jumlah.setText("Jumlah Beli :");
 
         txtJumlah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -297,9 +323,9 @@ public class frmTransaksi extends javax.swing.JFrame {
                 transaksi.jumlah = Integer.parseInt(njumlah);
                 
                 String nharga_furniture = txthargafurni.getText();
-                transaksi.harga_furniture = Integer.parseInt(nharga_furniture);
-                 String mharga = txttotalbayar.getText();
-                transaksi.harga = Integer.parseInt(mharga);
+                transaksi.harga = Integer.parseInt(nharga_furniture);
+                String mharga = txttotalbayar.getText();
+                transaksi.total = Integer.parseInt(mharga);
                 transaksi.edit();
                 transaksi.res.execute(transaksi.sql);
                 transaksi.conn.close();
@@ -355,7 +381,7 @@ public class frmTransaksi extends javax.swing.JFrame {
 
     private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
         // TODO add your handling code here:
-        if(txtNotransaksi.getText().equals("")){
+        if(txtNotransaksi.getText().equals("") || txt){
             JOptionPane.showMessageDialog(null,"Pilih No Transaksi Yang mau di Edit");
         }else{
             try{
@@ -369,10 +395,10 @@ public class frmTransaksi extends javax.swing.JFrame {
                 transaksi.jumlah = Integer.parseInt(njumlah);
                 
                 String nharga_furniture = txthargafurni.getText();
-                transaksi.harga_furniture = Integer.parseInt(nharga_furniture);
+                transaksi.harga = Integer.parseInt(nharga_furniture);
                  String mharga = txttotalbayar.getText();
-                 transaksi.edit();
-                transaksi.harga = Integer.parseInt(mharga);
+                transaksi.edit();
+                transaksi.total = Integer.parseInt(mharga);
                 transaksi.simpan();
                 transaksi.res.execute(transaksi.sql);
                 transaksi.conn.close();
@@ -425,6 +451,7 @@ public class frmTransaksi extends javax.swing.JFrame {
 
     private void txttotalbayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttotalbayarActionPerformed
         // TODO add your handling code here:
+        
         
     }//GEN-LAST:event_txttotalbayarActionPerformed
 

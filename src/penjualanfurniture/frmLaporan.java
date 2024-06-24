@@ -8,13 +8,67 @@ package penjualanfurniture;
  *
  * @author supercellmoonton
  */
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.io.File;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 public class frmLaporan extends javax.swing.JFrame {
+    clsLaporan laporan = new clsLaporan();
+
+    
 
     /**
      * Creates new form frmLaporan
      */
     public frmLaporan() {
         initComponents();
+        isiLaporan1();
+        isiLaporan2();
+    }
+    public void isiLaporan1(){
+        try{
+            Dari.removeAllItems();
+            laporan.AksesData();
+            String sql1 = "select id_laporan from laporan";
+            Statement stat1 = laporan.conn.createStatement();
+            ResultSet res1 = stat1.executeQuery(sql1);
+            Dari.addItem("Pilih ID");
+            while(res1.next()){
+                Dari.addItem(res1.getString("id_laporan"));
+            }
+        }catch(Exception e){
+            
+            
+        }
+    }
+    public void isiLaporan2(){
+        try{
+            Sampai.removeAllItems();
+            laporan.AksesData();
+            String sql1 = "select id_laporan from laporan";
+            Statement stat1 = laporan.conn.createStatement();
+            ResultSet res1 = stat1.executeQuery(sql1);
+            Sampai.addItem("Pilih ID");
+            while(res1.next()){
+                Sampai.addItem(res1.getString("id_laporan"));
+            }
+                 
+            
+        }catch(Exception e){
+            
+        }
     }
 
     /**
@@ -26,21 +80,124 @@ public class frmLaporan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnCetak = new javax.swing.JButton();
+        btnKeluar = new javax.swing.JButton();
+        Dari = new javax.swing.JComboBox<>();
+        Sampai = new javax.swing.JComboBox<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Dari :");
+
+        jLabel2.setText("Sampai :");
+
+        jLabel3.setText("Cetak Penjualan");
+
+        btnCetak.setText("Cetak");
+        btnCetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCetakActionPerformed(evt);
+            }
+        });
+
+        btnKeluar.setText("Keluar");
+        btnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKeluarActionPerformed(evt);
+            }
+        });
+
+        Dari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Dari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DariActionPerformed(evt);
+            }
+        });
+
+        Sampai.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCetak)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                .addComponent(btnKeluar))
+                            .addComponent(Sampai, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Dari, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel3)
+                .addGap(71, 71, 71)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(Dari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(Sampai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCetak)
+                    .addComponent(btnKeluar))
+                .addGap(85, 85, 85))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKeluarActionPerformed
+
+    private void DariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DariActionPerformed
+
+    private void btnCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetakActionPerformed
+        // TODO add your handling code here:
+        JasperReport jasRep;
+        JasperPrint jasPri;
+        Map<String, Object> lapor =new HashMap<>();
+        JasperDesign jasDes;
+        try{
+            laporan.AksesData();
+            File report1 = new File ("/rptLaporan.jrxml");
+            jasDes = JRXmlLoader.load(report1);
+            lapor.clear();
+            laporan.jual1 = Dari.getSelectedItem().toString();
+            laporan.jual2 = Sampai.getSelectedItem().toString();
+            lapor.put("fjual1", laporan.jual1);
+            lapor.put("fjual2", laporan.jual2);
+            jasRep = JasperCompileManager.compileReport(jasDes);
+            jasPri = JasperFillManager.fillReport(jasRep, lapor, laporan.conn);
+            JasperViewer.viewReport(jasPri, false);
+            
+            
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_btnCetakActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +235,12 @@ public class frmLaporan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Dari;
+    private javax.swing.JComboBox<String> Sampai;
+    private javax.swing.JButton btnCetak;
+    private javax.swing.JButton btnKeluar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

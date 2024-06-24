@@ -12,7 +12,7 @@ public class clsTransaksi extends clskoneksi{
     String tanggal;
     String nama_furniture;
     int jumlah;
-    int harga_furniture;
+    int total;
     int harga;
     
     public void tampildata (){
@@ -21,7 +21,7 @@ public class clsTransaksi extends clskoneksi{
     
     public void simpan(){
         try{
-            sql = "insert into transaksi values ('"+no_transaksi+"','"+tanggal+"','"+nama_furniture+"','"+jumlah+"','"+harga_furniture+"','"+harga+"')";
+            sql = "insert into transaksi values ('"+no_transaksi+"','"+tanggal+"','"+nama_furniture+"','"+jumlah+"','"+harga+"','"+total+"')";
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Terjadi Kesalahan / Koneksi eror");
             System.out.println(e.getMessage());
@@ -30,7 +30,7 @@ public class clsTransaksi extends clskoneksi{
     
     public void edit(){
         try{
-            sql="update transaksi set tanggal = '"+tanggal+"',nama_furniture='"+nama_furniture+"',jumlah='"+jumlah+"',harga_furniture='"+harga_furniture+"''";
+            sql="update transaksi set tanggal = '"+tanggal+"',nama_furniture='"+nama_furniture+"',jumlah='"+jumlah+"',total_harga='"+total+"'";
            
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"terjadi Kesalahan / Koneksi eror");
@@ -40,7 +40,7 @@ public class clsTransaksi extends clskoneksi{
     
     public void hapus(){
         try{
-            sql ="delete from transaksi whare no_transaksi= '"+no_transaksi+"',";
+            sql ="delete from transaksi where id_transaksi= '"+no_transaksi+"',";
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Terjadi Kesalahan");
             System.out.println(e.getMessage());
