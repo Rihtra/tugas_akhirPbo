@@ -249,7 +249,7 @@ public class frmTransaksi extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(edit)
+                .addComponent(edit, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                 .addGap(66, 66, 66)
                 .addComponent(delete)
                 .addGap(69, 69, 69)
