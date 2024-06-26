@@ -26,6 +26,10 @@ public class clskoneksi {
             JOptionPane.showMessageDialog(null, "Koneksi Gagal Terhubung");
             System.out.println(e.getMessage());
             }
+        
+        
     }
+    
+    
     
 }
