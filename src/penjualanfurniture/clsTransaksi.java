@@ -21,7 +21,8 @@ public class clsTransaksi extends clskoneksi{
     
     public void simpan(){
         try{
-            sql = "insert into transaksi values ('"+no_transaksi+"','"+tanggal+"','"+nama_furniture+"','"+jumlah+"','"+harga+"','"+total+"')";
+            sql = "INSERT INTO transaksi (tanggal, nama_furniture, jumlah, harga, total_harga) VALUES ('" + tanggal + "', '" + nama_furniture + "', '" + jumlah + "', '" + harga + "', '" + total + "')";
+            
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Terjadi Kesalahan / Koneksi eror");
             System.out.println(e.getMessage());

@@ -26,118 +26,38 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
-                      <Component id="tbfurni" min="-2" pref="91" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="edit" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                      <Component id="delete" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                      <Component id="reset" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
-                      <Component id="simpan" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txttotalbayar" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace pref="473" max="32767" attributes="0"/>
               <Component id="fromtarnsksi" min="-2" pref="118" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-              <Component id="keluar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="696" max="-2" attributes="0"/>
           </Group>
-          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="635" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="namafurni" alignment="0" pref="93" max="32767" attributes="0"/>
-                      <Component id="tgl" alignment="0" max="32767" attributes="0"/>
-                      <Component id="notr" alignment="0" max="32767" attributes="0"/>
-                      <Component id="hrgfurni" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jumlah" min="-2" pref="91" max="-2" attributes="0"/>
+                  <Component id="reset" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="delete" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="keluar" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="txtnamafurni" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtNotransaksi" max="32767" attributes="0"/>
-                  <Component id="txthargafurni" max="32767" attributes="0"/>
-                  <Component id="Tgl" max="32767" attributes="0"/>
-                  <Component id="txtJumlah" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="fromtarnsksi" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="keluar" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="notr" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNotransaksi" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="tgl" min="-2" max="-2" attributes="0"/>
-                  <Component id="Tgl" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="namafurni" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtnamafurni" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jumlah" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtJumlah" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="hrgfurni" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txthargafurni" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txttotalbayar" pref="23" max="32767" attributes="0"/>
-                  <Component id="tbfurni" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="edit" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="simpan" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="delete" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="reset" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="185" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="fromtarnsksi" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="keluar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+              <Component id="delete" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="233" max="32767" attributes="0"/>
+              <Component id="reset" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -147,55 +67,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="FROM TRANSAKSI"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="notr">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="No Transaksi     :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="tgl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Tanggal             :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="namafurni">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nama Furniture :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="hrgfurni">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Harga Furniture :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="tbfurni">
-      <Properties>
-        <Property name="text" type="java.lang.String" value=" Total Bayar     :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtNotransaksi">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtnamafurni">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txthargafurni">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txthargafurniActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txttotalbayar">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txttotalbayarActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="Tgl">
-    </Component>
-    <Component class="javax.swing.JButton" name="edit">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Edit "/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="delete">
       <Properties>
@@ -211,14 +82,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="simpan">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Simpan"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="simpanActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="keluar">
@@ -292,15 +155,5 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jumlah">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Jumlah Beli :"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtJumlah">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtJumlahActionPerformed"/>
-      </Events>
-    </Component>
   </SubComponents>
 </Form>

@@ -28,7 +28,7 @@ public class frmTransaksi extends javax.swing.JFrame {
         initComponents();
         transaksi.AksesData();
         IsiTable();
-        addListeners();
+        
     }
 
    public void IsiTable(){
@@ -56,63 +56,19 @@ public class frmTransaksi extends javax.swing.JFrame {
             
         }
     }
-    public void Bersih(){
-        txtNotransaksi.setText("");
-        Tgl.setDate(null);
-        txtnamafurni.setText("");
-        txthargafurni.setText("");
-        txtJumlah.setText("");
-        txttotalbayar.setText("");
-        txtNotransaksi.requestFocus();
-    }
-    private void addListeners() {
-        txtJumlah.addKeyListener(new KeyAdapter() {
-            public void keyReleased(KeyEvent evt) {
-                calculateTotal();
-            }
-        });
-        txthargafurni.addKeyListener(new KeyAdapter() {
-            public void keyReleased(KeyEvent evt) {
-                calculateTotal();
-            }
-        });
-    }
+    
 
-    private void calculateTotal() {
-        try {
-            int jumlah = Integer.parseInt(txtJumlah.getText());
-            int harga = Integer.parseInt(txthargafurni.getText());
-            int total = jumlah * harga;
-            txttotalbayar.setText(String.valueOf(total));
-        } catch (NumberFormatException e) {
-            // Handle exception if input is not a valid number
-            txttotalbayar.setText("");
-        }
-    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         fromtarnsksi = new javax.swing.JLabel();
-        notr = new javax.swing.JLabel();
-        tgl = new javax.swing.JLabel();
-        namafurni = new javax.swing.JLabel();
-        hrgfurni = new javax.swing.JLabel();
-        tbfurni = new javax.swing.JLabel();
-        txtNotransaksi = new javax.swing.JTextField();
-        txtnamafurni = new javax.swing.JTextField();
-        txthargafurni = new javax.swing.JTextField();
-        txttotalbayar = new javax.swing.JTextField();
-        Tgl = new com.toedter.calendar.JDateChooser();
-        edit = new javax.swing.JButton();
         delete = new javax.swing.JButton();
         reset = new javax.swing.JButton();
-        simpan = new javax.swing.JButton();
         keluar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTransaksi = new javax.swing.JTable();
-        jumlah = new javax.swing.JLabel();
-        txtJumlah = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -122,35 +78,6 @@ public class frmTransaksi extends javax.swing.JFrame {
         });
 
         fromtarnsksi.setText("FROM TRANSAKSI");
-
-        notr.setText("No Transaksi     :");
-
-        tgl.setText("Tanggal             :");
-
-        namafurni.setText("Nama Furniture :");
-
-        hrgfurni.setText("Harga Furniture :");
-
-        tbfurni.setText(" Total Bayar     :");
-
-        txthargafurni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txthargafurniActionPerformed(evt);
-            }
-        });
-
-        txttotalbayar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txttotalbayarActionPerformed(evt);
-            }
-        });
-
-        edit.setText("Edit ");
-        edit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editActionPerformed(evt);
-            }
-        });
 
         delete.setText("Delete");
         delete.addActionListener(new java.awt.event.ActionListener() {
@@ -163,13 +90,6 @@ public class frmTransaksi extends javax.swing.JFrame {
         reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetActionPerformed(evt);
-            }
-        });
-
-        simpan.setText("Simpan");
-        simpan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simpanActionPerformed(evt);
             }
         });
 
@@ -198,148 +118,41 @@ public class frmTransaksi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblTransaksi);
 
-        jumlah.setText("Jumlah Beli :");
-
-        txtJumlah.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtJumlahActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(311, 311, 311)
-                        .addComponent(tbfurni, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(edit)
-                        .addGap(66, 66, 66)
-                        .addComponent(delete)
-                        .addGap(69, 69, 69)
-                        .addComponent(reset)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(simpan)
-                        .addGap(62, 62, 62))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txttotalbayar)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(473, Short.MAX_VALUE)
                 .addComponent(fromtarnsksi, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
-                .addComponent(keluar)
-                .addGap(30, 30, 30))
-            .addComponent(jScrollPane1)
+                .addGap(696, 696, 696))
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(namafurni, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-                        .addComponent(tgl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(notr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(hrgfurni, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtnamafurni, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNotransaksi)
-                    .addComponent(txthargafurni)
-                    .addComponent(Tgl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtJumlah))
-                .addGap(214, 214, 214))
+                    .addComponent(reset, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(delete, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(keluar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(fromtarnsksi))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(keluar)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(notr)
-                    .addComponent(txtNotransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(fromtarnsksi)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tgl)
-                    .addComponent(Tgl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(namafurni)
-                    .addComponent(txtnamafurni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jumlah)
-                    .addComponent(txtJumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(hrgfurni)
-                    .addComponent(txthargafurni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txttotalbayar, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
-                    .addComponent(tbfurni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edit)
-                    .addComponent(simpan)
-                    .addComponent(delete)
-                    .addComponent(reset))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(keluar)
+                .addGap(182, 182, 182)
+                .addComponent(delete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
+                .addComponent(reset))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txthargafurniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthargafurniActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txthargafurniActionPerformed
-
-    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        // TODO add your handling code here:
-        if(txtNotransaksi.getText().equals ("")){
-            JOptionPane.showMessageDialog(null,"Pilih No Transaksi Yang mau di Edit");
-        }else{
-            try{
-                transaksi.AksesData();
-                transaksi.no_transaksi = txtNotransaksi.getText();
-                SimpleDateFormat date_format = new SimpleDateFormat("yyyy-MM-dd");
-                transaksi.tanggal = date_format.format(Tgl.getDate());
-                transaksi.nama_furniture = txtnamafurni.getText();
-                 String njumlah = txtJumlah.getText();
-                transaksi.jumlah = Integer.parseInt(njumlah);
-                
-                String nharga_furniture = txthargafurni.getText();
-                transaksi.harga = Integer.parseInt(nharga_furniture);
-                String mharga = txttotalbayar.getText();
-                transaksi.total = Integer.parseInt(mharga);
-                transaksi.edit();
-                transaksi.res.execute(transaksi.sql);
-                transaksi.conn.close();
-                Bersih();
-                IsiTable();
-                JOptionPane.showMessageDialog(null,"Data Berhasil di Edit ");
-              
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null,"Terjadi Kesalahan");
-                System.out.println(e.getMessage());
-            }
-            
-        }
-    }//GEN-LAST:event_editActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
@@ -353,12 +166,12 @@ public class frmTransaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             transaksi.AksesData();
-            transaksi.no_transaksi = txtNotransaksi.getText();
+           
             transaksi.hapus();
             transaksi.res.executeUpdate(transaksi.sql);
             transaksi.conn.close();
             IsiTable();
-            Bersih();
+         
             JOptionPane.showMessageDialog(null, "Data Berhasil di hapus");
             
         }catch(Exception e){
@@ -371,48 +184,13 @@ public class frmTransaksi extends javax.swing.JFrame {
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
         try{
-            Bersih();
+       
             IsiTable();
-            txtNotransaksi.requestFocus();
+         
         }catch(Exception e){
             
         }
     }//GEN-LAST:event_resetActionPerformed
-
-    private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
-        // TODO add your handling code here:
-        if(txtNotransaksi.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"Pilih No Transaksi Yang mau di Edit");
-        }else{
-            try{
-                transaksi.AksesData();
-                transaksi.no_transaksi = txtNotransaksi.getText();
-                SimpleDateFormat date_format = new SimpleDateFormat("yy-MM-dd");
-                transaksi.tanggal = date_format.format(Tgl.getDate());
-                transaksi.nama_furniture = txtnamafurni.getText();
-                
-                String njumlah = txtJumlah.getText();
-                transaksi.jumlah = Integer.parseInt(njumlah);
-                
-                String nharga_furniture = txthargafurni.getText();
-                transaksi.harga = Integer.parseInt(nharga_furniture);
-                 String mharga = txttotalbayar.getText();
-               
-                transaksi.total = Integer.parseInt(mharga);
-                transaksi.simpan();
-                transaksi.res.execute(transaksi.sql);
-                transaksi.conn.close();
-                Bersih();
-                IsiTable();
-                JOptionPane.showMessageDialog(null,"Data Berhasil di Simpan  ");
-              
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null,"Terjadi Kesalahan");
-                System.out.println(e.getMessage());
-            }
-            
-        }
-    }//GEN-LAST:event_simpanActionPerformed
 
     private void keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarActionPerformed
         // TODO add your handling code here:
@@ -430,30 +208,16 @@ public class frmTransaksi extends javax.swing.JFrame {
         String kolom6 = tblTransaksi.getValueAt(baris, 5).toString();
         
         
-        txtNotransaksi.setText(kolom1);
+   
         Date a = null;
         try {
             a = new SimpleDateFormat("yyy-MM-dd").parse(kolom2);
         } catch (ParseException ex) {
             Logger.getLogger(frmTransaksi.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Tgl.setDate(a);
-        txtnamafurni.setText(kolom3);
-        txtJumlah.setText(kolom4);
-        txthargafurni.setText(kolom5);
-        txttotalbayar.setText(kolom6);
+      
         
     }//GEN-LAST:event_tblTransaksiMouseClicked
-
-    private void txtJumlahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJumlahActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtJumlahActionPerformed
-
-    private void txttotalbayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttotalbayarActionPerformed
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_txttotalbayarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -491,25 +255,11 @@ public class frmTransaksi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser Tgl;
     private javax.swing.JButton delete;
-    private javax.swing.JButton edit;
     private javax.swing.JLabel fromtarnsksi;
-    private javax.swing.JLabel hrgfurni;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel jumlah;
     private javax.swing.JButton keluar;
-    private javax.swing.JLabel namafurni;
-    private javax.swing.JLabel notr;
     private javax.swing.JButton reset;
-    private javax.swing.JButton simpan;
-    private javax.swing.JLabel tbfurni;
     private javax.swing.JTable tblTransaksi;
-    private javax.swing.JLabel tgl;
-    private javax.swing.JTextField txtJumlah;
-    private javax.swing.JTextField txtNotransaksi;
-    private javax.swing.JTextField txthargafurni;
-    private javax.swing.JTextField txtnamafurni;
-    private javax.swing.JTextField txttotalbayar;
     // End of variables declaration//GEN-END:variables
 }

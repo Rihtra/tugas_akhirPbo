@@ -27,22 +27,23 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mAdmin = new javax.swing.JMenu();
         mFurniture = new javax.swing.JMenu();
         mTransaksi = new javax.swing.JMenu();
-        mLaporan = new javax.swing.JMenu();
         mLogout = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mAdmin.setText("Admin");
-        mAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mAdminMouseClicked(evt);
+        jButton1.setText("jButton1");
+
+        jButton2.setText("Riwayat");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
-        jMenuBar1.add(mAdmin);
 
         mFurniture.setText("Furniture");
         mFurniture.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -60,14 +61,6 @@ public class Dashboard extends javax.swing.JFrame {
         });
         jMenuBar1.add(mTransaksi);
 
-        mLaporan.setText("Laporan");
-        mLaporan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mLaporanMouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(mLaporan);
-
         mLogout.setText("Logout");
         mLogout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -82,21 +75,21 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 606, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(525, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 301, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2)
+                .addContainerGap(272, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void mAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mAdminMouseClicked
-        // TODO add your handling code here:
-        frmAdmin admin = new frmAdmin();
-        admin.setVisible(true);
-    }//GEN-LAST:event_mAdminMouseClicked
 
     private void mFurnitureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mFurnitureMouseClicked
         // TODO add your handling code here:
@@ -110,17 +103,17 @@ public class Dashboard extends javax.swing.JFrame {
         transaksi.setVisible(true);
     }//GEN-LAST:event_mTransaksiMouseClicked
 
-    private void mLaporanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mLaporanMouseClicked
-        // TODO add your handling code here:
-        frmLaporan laporan = new frmLaporan();
-        laporan.setVisible(true);
-    }//GEN-LAST:event_mLaporanMouseClicked
-
     private void mLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mLogoutMouseClicked
         // TODO add your handling code here:
         Login masuk = new Login();
         masuk.setVisible(true);
     }//GEN-LAST:event_mLogoutMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        frmRiwayat riwayat = new frmRiwayat();
+        riwayat.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,10 +151,10 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu mAdmin;
     private javax.swing.JMenu mFurniture;
-    private javax.swing.JMenu mLaporan;
     private javax.swing.JMenu mLogout;
     private javax.swing.JMenu mTransaksi;
     // End of variables declaration//GEN-END:variables

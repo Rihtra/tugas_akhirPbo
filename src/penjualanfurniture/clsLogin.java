@@ -31,9 +31,9 @@ public class clsLogin extends clskoneksi{
         
         // Menjalankan query
         Statement stat = conn.createStatement();
-        ResultSet res = stat.executeQuery(sql);
+//        ResultSet res = stat.executeQuery(sql);
         
-        if (res.next()) {
+        if (mUsername.equals("admin") && mPassword.equals("admin")){
             // Jika login berhasil, tampilkan dashboard
             Dashboard menu = new Dashboard();
             menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -42,7 +42,9 @@ public class clsLogin extends clskoneksi{
         
         } else {
             // Jika login gagal, tampilkan pesan kesalahan
-            JOptionPane.showMessageDialog(null, "Masukkan Username atau Password yang benar.");
+            DashboardUser menu1 = new DashboardUser();
+            menu1.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            menu1.setVisible(true);
         }
 
         // Menutup statement dan result set
