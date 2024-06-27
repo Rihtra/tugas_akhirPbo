@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class clsRiwayat extends clskoneksi {
     
     public void tampilkanRiwayat() {
-       sql = "select * from transaksi";
+       sql = "select * from transaksi"; //isi dari riwayat diambil dari inputan user yang mau memesan
     }
     public void cariRiwayatByTanggal(JTable tblRiwayat, Date tanggalMulai, Date tanggalSelesai) {
         try {

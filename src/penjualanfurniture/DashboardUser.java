@@ -4,6 +4,9 @@
  */
 package penjualanfurniture;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author supercellmoonton
@@ -26,12 +29,18 @@ public class DashboardUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btndaftar = new javax.swing.JButton();
-        btntransaksi = new javax.swing.JButton();
         btnlogout = new javax.swing.JButton();
+        btntransaksi = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 204, 153));
+
+        btndaftar.setBackground(new java.awt.Color(51, 204, 255));
+        btndaftar.setForeground(new java.awt.Color(255, 255, 255));
         btndaftar.setText("Daftar Furniture");
         btndaftar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -39,13 +48,8 @@ public class DashboardUser extends javax.swing.JFrame {
             }
         });
 
-        btntransaksi.setText("Transaksi");
-        btntransaksi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btntransaksiActionPerformed(evt);
-            }
-        });
-
+        btnlogout.setBackground(new java.awt.Color(255, 51, 51));
+        btnlogout.setForeground(new java.awt.Color(255, 255, 255));
         btnlogout.setText("Logout");
         btnlogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,31 +57,54 @@ public class DashboardUser extends javax.swing.JFrame {
             }
         });
 
+        btntransaksi.setBackground(new java.awt.Color(102, 255, 102));
+        btntransaksi.setForeground(new java.awt.Color(255, 255, 255));
+        btntransaksi.setText("Transaksi");
+        btntransaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntransaksiActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/penjualanfurniture/furnitur-transformed.jpeg.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btntransaksi)
+                    .addComponent(btndaftar)
+                    .addComponent(btnlogout))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(btndaftar)
+                .addGap(18, 18, 18)
+                .addComponent(btntransaksi)
+                .addGap(46, 46, 46)
+                .addComponent(btnlogout)
+                .addContainerGap(145, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(btndaftar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
-                .addComponent(btntransaksi)
-                .addGap(99, 99, 99))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(249, 249, 249)
-                .addComponent(btnlogout)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btndaftar)
-                    .addComponent(btntransaksi))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
-                .addComponent(btnlogout)
-                .addGap(74, 74, 74))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -91,6 +118,10 @@ public class DashboardUser extends javax.swing.JFrame {
 
     private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
         // TODO add your handling code here:
+        
+        this.dispose();
+        Login masuk = new Login();
+        masuk.setVisible(true);
     }//GEN-LAST:event_btnlogoutActionPerformed
 
     private void btndaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndaftarActionPerformed
@@ -100,6 +131,13 @@ public class DashboardUser extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btndaftarActionPerformed
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
+        // TODO add your handling code here:
+        Dimension posisi = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (posisi.width-this.getWidth())/2;
+        int y = (posisi.height-this.getHeight())/2;
+        this.setLocation(x,y);
+    }            
     /**
      * @param args the command line arguments
      */
@@ -139,5 +177,7 @@ public class DashboardUser extends javax.swing.JFrame {
     private javax.swing.JButton btndaftar;
     private javax.swing.JButton btnlogout;
     private javax.swing.JButton btntransaksi;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
